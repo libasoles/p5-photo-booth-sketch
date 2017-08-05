@@ -4,7 +4,8 @@
   "description": "Photo Booth",
   "main": "src/main.ts",
   "engines": {
-    "node": "8.2.1"
+    "node": "8.2.1",
+    "npm": "5.3.0"
   },
   "devDependencies": {
     "http-server": "^0.8.5",

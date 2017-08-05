@@ -3,21 +3,21 @@ const CommonConfig = require('./webpack.common.js');
 const path = require('path');
 const webpack = require('webpack')
 const fs = require('fs-extra')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader')
+let config = require('./server.config.js');
 
 /**
  * Config
  */
-const config = {
+config = Object.assign(config, {
 	server_host: 'localhost',
-	server_port: 7800,
-	dir_src: './src',
-	dir_dist: './public'
-}
+	server_port: 7800
+});
 
-config.publicPath = 'http://' + config.server_host + ':' + config.server_port + '/public';
+// Build for webpack-dev-server with hot reloading
+config.publicPath = 'http://' + config.server_host + ':' + config.server_port + config.publicPath;
 
 /**
  * Init
@@ -26,6 +26,9 @@ module.exports = Merge(CommonConfig, {
 		plugins: [
         new webpack.HotModuleReplacementPlugin(), // Enable HMR
     ],
+		output: {
+			publicPath: config.publicPath
+		},
     devtool: 'source-map',
 		devServer: {
         hot: true, // Tell the dev-server we're using HMR
