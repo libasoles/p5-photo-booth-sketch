@@ -1,8 +1,12 @@
-# Photo Booth [WIP]
+# Photo Booth
 
 Photo Booth sketch in p5.js, using typescript.
 
-You can get the original p5.js sketch from _/prototype_ folder. 
+You can get the original p5.js sketch from _/prototype_ folder.
+
+## Demo
+
+[Try it on Heroku](https://morning-scrubland-20460.herokuapp.com/)
 
 ## Screenshot
 

@@ -6,6 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 const config = require('./server.config.js');
 
+fs.copySync(config.dir_static, config.dir_dist)
+
 /**
  * Init
  */

@@ -1,9 +1,126 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Photo Booth</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body class="pristine">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="/images/logo.png" alt="logo" class="logo" /></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Phot<span class="dot"></span> Booth</h1>
+        <p class="lead">This sketch run with p5.js, and simply takes some pics from camera.<br> Give camera permission to get started.</p>
+      </div>
+
+      <div id='canvas-container'></div>
+
+      <div class="actions">
+        <button class="btn btn-lg btn-success btn-start">Start</button>
+        <button class="btn btn-lg btn-warning btn-save">Save</button>
+      </div>
+
+      <!-- I got these buttons from simplesharebuttons.com -->
+      <div id="share-buttons">
+
+          <h3>Share</h3>
+
+          <!-- Buffer -->
+          <a href="https://bufferapp.com/add?url=https://morning-scrubland-20460.herokuapp.com&amp;text=Simple Photo Booth" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
+          </a>
+
+          <!-- Digg -->
+          <a href="http://www.digg.com/submit?url=https://morning-scrubland-20460.herokuapp.com" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:?Subject=Simple Photo Booth&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://morning-scrubland-20460.herokuapp.com">
+              <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+          </a>
+
+          <!-- Facebook -->
+          <a href="http://www.facebook.com/sharer.php?u=https://morning-scrubland-20460.herokuapp.com" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+          </a>
+
+          <!-- Google+ -->
+          <a href="https://plus.google.com/share?url=https://morning-scrubland-20460.herokuapp.com" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://morning-scrubland-20460.herokuapp.com" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+          </a>
+
+          <!-- Pinterest -->
+          <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+              <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+          </a>
+
+          <!-- Print -->
+          <a href="javascript:;" onclick="window.print()">
+              <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+          </a>
+
+          <!-- Reddit -->
+          <a href="http://reddit.com/submit?url=https://morning-scrubland-20460.herokuapp.com&amp;title=Simple Photo Booth" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+          </a>
+
+          <!-- StumbleUpon-->
+          <a href="http://www.stumbleupon.com/submit?url=https://morning-scrubland-20460.herokuapp.com&amp;title=Simple Photo Booth" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
+          </a>
+
+          <!-- Tumblr-->
+          <a href="http://www.tumblr.com/share/link?url=https://morning-scrubland-20460.herokuapp.com&amp;title=Simple Photo Booth" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com/share?url=https://morning-scrubland-20460.herokuapp.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+          </a>
+
+          <!-- VK -->
+          <a href="http://vkontakte.ru/share.php?url=https://morning-scrubland-20460.herokuapp.com" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+          </a>
+
+          <!-- Yummly -->
+          <a href="http://www.yummly.com/urb/verify?url=https://morning-scrubland-20460.herokuapp.com&amp;title=Simple Photo Booth" target="_blank">
+              <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
+          </a>
+
+      </div>
+
+      <div id="github">
+        <img alt="" class="avatar" data-canonical-src="https://1.gravatar.com/avatar/de7a9355aac0c4bfe08e04e7fcb0713f?d=https%3A%2F%2Fassets-cdn.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&amp;r=x&amp;s=140" height="20" src="https://camo.githubusercontent.com/0b39a2fc186f885993aa129d07910b1621d57733/68747470733a2f2f312e67726176617461722e636f6d2f6176617461722f64653761393335356161633063346266653038653034653766636230373133663f643d68747470732533412532462532466173736574732d63646e2e6769746875622e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d7826733d313430" width="20">
+        <a href="https://github.com/libasoles/p5-photo-booth-sketch"> Source code</a>
+      </div>
+    </div><!-- /.container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
-  </head>
-  <body>
-    <div id='canvas'></div>
   </body>
 </html>
