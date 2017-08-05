@@ -38,6 +38,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template : config.dir_src + '/index.html',
+						favicon	 : config.dir_src + '/favicon.ico',
             hash     : false,
             filename : 'index.html',
             inject   : 'body',
