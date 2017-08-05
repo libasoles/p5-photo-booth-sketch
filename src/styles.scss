@@ -1,0 +1,12 @@
+ html, * { margin: 0 }
+ 
+.dot {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px; 
+    background: #955;   
+}
+
+.dot.red {
+    background: red;    
+}    
