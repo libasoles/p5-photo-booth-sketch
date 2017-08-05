@@ -10,8 +10,11 @@ const { CheckerPlugin } = require('awesome-typescript-loader')
 /**
  * Init
  */
-module.exports = {
+module.exports = Merge(CommonConfig, {
 		devtool: 'cheap-source-map',
+		output: {
+			publicPath: '/'
+		},
 	  plugins: [
 	    new webpack.LoaderOptionsPlugin({
 	      minimize: true,
