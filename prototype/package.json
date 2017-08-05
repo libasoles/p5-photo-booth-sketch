@@ -1,0 +1,15 @@
+{
+  "name": "cameracaptures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "devDependencies": {
+    "http-server": "^0.8.5"
+  },
+  "scripts": {
+    "serve": "http-server ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
