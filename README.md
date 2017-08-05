@@ -1,4 +1,12 @@
-# Photo captures 
+# Photo Booth [WIP]
+
+Photo Booth sketch in p5.js, using typescript.
+
+You can get the original p5.js sketch from _/prototype_ folder. 
+
+## Screenshot
+
+![screenshot](./screenshot.jpg)
 
 ## Requirements
 
@@ -8,16 +16,22 @@ You must have node installed
 
 `npm install`
 
+## Build
+
+`npm run build` or `npm run build:dev` for hot reloading.
+
 ## Run server
 
-`npm run serve`
+`node server.js`
 
-Then, go to `localhost:xxxx`, replacing the port with the assigned one.
+Then, go to `localhost:3000`
 
 ## Usage
 
-Click screen. 
+Allow camera access.
+
+Click screen.
 
 9 photos will be taken.
 
-Capture will prompt to download. 
+Capture will prompt to download.
