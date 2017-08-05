@@ -1,23 +1,13 @@
 {
   "name": "cameracaptures",
   "version": "1.0.0",
-  "description": "## Requirements",
-  "main": "sketch.js",
+  "description": "Photo Booth",
+  "main": "src/main.ts",
+  "engines": {
+    "node": "8.2.1"
+  },
   "devDependencies": {
     "http-server": "^0.8.5",
-    "awesome-typescript-loader": "^3.2.2",
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "ts-loader": "^2.3.2",
-    "typescript": "^2.4.2",
-    "webpack": "^3.4.1",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.6.1"
   },
@@ -26,7 +16,9 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "NODE_ENV=production webpack -p --config webpack.prod.js",
     "build:dev": "NODE_ENV=dev webpack --env=dev --config webpack.dev.js --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -39,6 +31,19 @@
     "p5": "^0.5.11",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "awesome-typescript-loader": "^3.2.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "ts-loader": "^2.3.2",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1",
     "webpack-merge": "^4.1.0"
   }
 }
