@@ -1,21 +1,10 @@
 const path = require('path');
 const webpack = require('webpack')
 const fs = require('fs-extra')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader')
-
-/**
- * Config
- */
-const config = {
-	server_host: 'localhost',
-	server_port: 7800,
-	dir_src: './src',
-	dir_dist: './public'
-}
-
-config.publicPath = 'http://' + config.server_host + ':' + config.server_port + '/public';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
+const config = require('./server.config.js');
 
 /**
  * Init
@@ -26,8 +15,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(config.dir_dist),
-        filename: '[name].bundle.js',
-        publicPath: config.publicPath
+        filename: '[name].bundle.js'
     },
     resolve: {
         extensions: [".js", ".ts"],
@@ -91,7 +79,7 @@ module.exports = {
                 options: {
                     limit: 10000
                 }
-                }
+            }
         ]
     },
     externals: {
