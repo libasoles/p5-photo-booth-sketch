@@ -1,4 +1,5 @@
 import * as P5 from 'p5'
+import 'p5/lib/addons/p5.dom';
 import * as $ from 'jquery'
 
 export class Sketch {
@@ -38,7 +39,7 @@ export class Sketch {
         this.canvas.parent('canvas-container');
 
         // init camera
-        this.capture = p5.createCapture(P5.VIDEO);
+        this.capture = p5.createCapture(p5.VIDEO);
         this.capture.size(this.camWidth, this.camHeight);
 
         // cell size
